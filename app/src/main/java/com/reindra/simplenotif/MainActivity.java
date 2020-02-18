@@ -34,3 +34,10 @@ public class MainActivity extends AppCompatActivity {
                 mNotificationManager.createNotificationChannel(channel);
             }
         }
+        Notification notification = mBuilder.build();
+
+        if (mNotificationManager != null) {
+            mNotificationManager.notify(NOTIFICATION_ID, notification);
+        }
+    }
+}
