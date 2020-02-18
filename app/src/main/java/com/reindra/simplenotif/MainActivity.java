@@ -26,3 +26,11 @@ public class MainActivity extends AppCompatActivity {
                     .setContentText(getResources().getString(R.string.content_text))
                     .setSubText(getResources().getString(R.string.subtext))
                     .setAutoCancel(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription(CHANNEL_NAME.toString());
+            mBuilder.setChannelId(CHANNEL_ID);
+            if (mNotificationManager != null) {
+                mNotificationManager.createNotificationChannel(channel);
+            }
+        }
