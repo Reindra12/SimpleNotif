@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SimpleNotif</string>
 </resources>
+    <string name="send_notif">send notification</string>
